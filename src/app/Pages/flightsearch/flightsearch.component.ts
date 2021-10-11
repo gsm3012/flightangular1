@@ -17,7 +17,8 @@ export class flightsearchComponent implements OnInit {
   Search = new FormGroup({
     to : new FormControl(''),
     from : new FormControl(''),
-    bookingDate : new FormControl('')
+    departDate : new FormControl(''),
+    returnDate : new FormControl('')
   })
 
 searchFlight()
@@ -26,7 +27,7 @@ searchFlight()
     alert("success");
 },
 (error)=>{
-  alert(error);
+  alert("error");
 }
   );
 }

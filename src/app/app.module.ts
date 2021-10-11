@@ -21,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import{ReactiveFormsModule} from '@angular/forms';
 import { flightsearchComponent } from './Pages/flightsearch/flightsearch.component';
+import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
+
 
 @NgModule({
   declarations: [
@@ -46,9 +48,13 @@ import { flightsearchComponent } from './Pages/flightsearch/flightsearch.compone
     FormsModule,
     HttpClientModule,
     MatSnackBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatRadioModule
   ],
-  providers: [],
+  providers: [{
+    provide: MAT_RADIO_DEFAULT_OPTIONS,
+    useValue: { color: 'warn' },
+}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
